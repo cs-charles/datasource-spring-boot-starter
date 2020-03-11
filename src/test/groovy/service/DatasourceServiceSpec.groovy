@@ -17,12 +17,21 @@ class DatasourceServiceSpec extends Specification{
     @Autowired
     private DataSourceService dataSourceService;
 
-    def "测试注入进来的service"(){
+    def "注入mysql"(){
         given:
         String dbType = System.getProperty("dbType","MYSQL");
         when:
         String res =  dataSourceService.dataSource();
         then:
         Assert.assertTrue(dbType.equalsIgnoreCase(res));
+    }
+
+    def "注入oracle"(){
+        given:
+        String dbType = System.getProperty("dbType","oracle");
+        when:
+        String res =  dataSourceService.dataSource();
+        then:
+        Assert.assertTrue(!dbType.equalsIgnoreCase(res));
     }
 }

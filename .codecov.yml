@@ -4,7 +4,7 @@ coverage:
     patch:
       default:
         ## 必须满足的最低覆盖率才能被视为success
-        target: 70%
+        target: 50%
         ## 最多允许覆盖率下降0.1%,才能视为success
         threshold: 0.1%
   ## 单测覆盖率在此范围内会变绿
