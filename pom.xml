@@ -18,6 +18,7 @@
         <java.version>1.8</java.version>
         <project.encoding>UTF-8</project.encoding>
         <groovy.version>2.4.7</groovy.version>
+        <spock.version>1.2-groovy-2.4</spock.version>
     </properties>
 
     <dependencies>
@@ -40,14 +41,14 @@
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>1.2-groovy-2.4</version>
+            <version>${spock.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-spring</artifactId>
-            <version>1.2-groovy-2.4</version>
+            <version>${spock.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -72,7 +73,7 @@
     </dependencies>
 
     <build>
-        <finalName>connector-bootstrap</finalName>
+        <finalName>datasource-spring-boot-starter</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
