@@ -14,5 +14,5 @@ public interface DataSourceService {
      * @author: xieyong
      * @since: 2019/10/23 下午4:27
      */
-    public void dataSource();
+    public String dataSource();
 }

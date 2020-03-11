@@ -3,8 +3,8 @@ package com.xy.datasource.spring.boot.starter.configuration;
 import com.xy.datasource.spring.boot.starter.annotation.DatabaseType;
 import com.xy.datasource.spring.boot.starter.dao.DataSource;
 import com.xy.datasource.spring.boot.starter.service.DataSourceService;
-import com.xy.datasource.spring.boot.starter.service.impl.MySQLDataSourceService;
-import lombok.Data;
+import com.xy.datasource.spring.boot.starter.service.impl.MySQLDataSourceServiceImpl;
+import com.xy.datasource.spring.boot.starter.service.impl.OracleDatasourceServiceImpl;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -29,13 +29,20 @@ public class DataSourceAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean  //上下文中缺少DataSourceService的Bean
     @DatabaseType("MYSQL")
-    public DataSourceService getDataSourceService()
+    public DataSourceService mysqlDataSourceService()
     {
-        return new MySQLDataSourceService();
+        return new MySQLDataSourceServiceImpl();
     }
 
     /**
      *
-     * 还可有oracle 等其他实现类
+     * oracle
      */
+    @Bean
+    @ConditionalOnMissingBean  //上下文中缺少DataSourceService的Bean
+    @DatabaseType("ORACLE")
+    public DataSourceService oracleDataSourceService()
+    {
+        return new OracleDatasourceServiceImpl();
+    }
 }
