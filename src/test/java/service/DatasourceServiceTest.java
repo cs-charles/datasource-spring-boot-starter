@@ -1,6 +1,7 @@
-package com.xy.datasource.spring.boot.starter;
+package service;
 
-import com.xy.datasource.spring.boot.starter.service.DataSourceService;
+import com.xy.datasource.spring.boot.starter.Application;
+ import com.xy.datasource.spring.boot.starter.service.DataSourceService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = Application.class)
 @Slf4j
 public class DatasourceServiceTest {
 

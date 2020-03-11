@@ -1,8 +1,15 @@
 coverage:
   status:
-    # pull-requests only
+    #仅仅统计pull request
     patch:
       default:
+        ## 必须满足的最低覆盖率才能被视为success
+        target: 50%
+        ## 最多允许覆盖率下降0.1%,才能视为success
         threshold: 0.1%
+  ## 单测覆盖率在此范围内会变绿
+  range:
+    50..100
+## 忽略的文件
 ignore:
   - "src/main/java/com.xy.datasource.spring.boot.starter.annotation/.*"
